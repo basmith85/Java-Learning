@@ -1,4 +1,4 @@
-public class Variables_2 {
+public class _02_Variables {
     public static void main(String[] args) {
 
         // variable = a reusable container for a value

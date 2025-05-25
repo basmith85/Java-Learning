@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserInput_3 {
+public class _03_UserInput {
     public static void main(String[] args) {
         //commonIssue(args);
         exercise(args);
