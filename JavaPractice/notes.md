@@ -281,3 +281,83 @@
 - `printf()` does not automatically move to a new line; use `\n` or `%n` explicitly.
 - Useful for aligning columns or formatting currency, percentages, and IDs.
 - Helps produce clean, readable output especially in console applications.
+---
+
+## 11. Compound Interest Calculator
+
+### Concepts Learned
+- A real-world application of math in Java using user input and formatted output.
+- Demonstrates how to apply the compound interest formula:
+  - `A = P * (1 + r/n)^(n*t)`
+  - Where:
+    - `P` = principal amount
+    - `r` = annual interest rate (as a decimal)
+    - `n` = number of times interest is compounded per year
+    - `t` = time in years
+    - `A` = amount after `t` years
+
+### Input and Output
+- Uses `Scanner` to get values for principal, interest rate, compound frequency, and duration.
+- Interest rate is converted from percentage to decimal by dividing by 100.
+- Uses `Math.pow()` to compute the exponential part of the formula.
+- Uses `System.out.printf()` for clean formatting of the final result to two decimal places.
+
+### Additional Notes
+- This project demonstrates combining math, variables, and input/output formatting in a practical example.
+- Good example of chaining multiple inputs and ensuring type accuracy (`double` vs `int`).
+
+---
+
+## 12. Nested If
+
+### Concepts Learned
+- `if` statements can be nested inside each other to handle multi-layered decision logic.
+- Demonstrates checking two related conditions (`isStudent`, `isSenior`) to apply compound discounts.
+
+### Discount Logic
+- If the user is both a student and a senior:
+  - Applies a 20% senior discount and an additional 10% student discount.
+  - Final price is calculated as `price * 0.7`.
+- If the user is only a student:
+  - Applies a 10% student discount.
+  - `price * 0.9`
+- If only a senior:
+  - Applies a 20% senior discount.
+  - `price * 0.8`
+- If neither:
+  - No discount is applied.
+
+### Additional Notes
+- Nested conditionals allow for more granular and specific decision-making.
+- Readability can be improved with consistent indentation and clear separation of logic blocks.
+- `System.out.printf()` is used for formatted price output.
+---
+
+## 13. String Methods
+
+### Concepts Learned
+- The `String` class in Java includes many useful methods for examining and manipulating text.
+
+### Common String Methods
+- `length()` – returns the number of characters in the string.
+- `charAt(index)` – returns the character at the specified index.
+- `indexOf(str)` – returns the index of the first occurrence of the specified substring.
+- `lastIndexOf(str)` – returns the index of the last occurrence of the specified substring.
+- `toUpperCase()` – converts all characters in the string to uppercase.
+- `toLowerCase()` – converts all characters in the string to lowercase.
+- `trim()` – removes leading and trailing whitespace from the string.
+- `replace(oldChar, newChar)` – replaces all occurrences of a character with another.
+
+### String Validation Methods
+- `isEmpty()` – returns `true` if the string has a length of 0.
+- `contains(str)` – returns `true` if the string contains the specified substring.
+- `equals(str)` – compares two strings with case sensitivity.
+- `equalsIgnoreCase(str)` – compares two strings while ignoring case.
+
+### Conditional Usage
+- These methods are often used in `if` statements to validate or check string content.
+- For example, checking for blank input or disallowed values (like the word "password").
+
+### Additional Notes
+- Strings are immutable; methods like `toUpperCase()` return a new string and do not modify the original unless reassigned.
+- Java string comparisons should always use `.equals()` or `.equalsIgnoreCase()`, not `==`, which compares object references.
