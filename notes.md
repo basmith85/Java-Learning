@@ -485,6 +485,7 @@ switch(day) {
     case "Saturday", "Sunday" -> System.out.println("Weekend");
     default -> System.out.println("Invalid day");
 }
+```
 ---
 
 ## 19. Calculator
@@ -514,3 +515,141 @@ switch(day) {
 - The result is stored in a `double` to accommodate all supported operations.
 - Program logic is structured to ensure the result is only printed if the operation is valid.
 - This example combines conditionals, user input, error handling, and formatted logic using enhanced switch syntax.
+---
+
+## 21. While Loops
+
+### Concepts Learned
+- `while` loops execute a block of code repeatedly as long as the given condition is `true`.
+- If the condition is `false` at the start, the loop is skipped entirely.
+- A `do-while` loop guarantees the loop runs **at least once**, because the condition is checked **after** the loop body.
+
+### While Loop Usage
+- Commonly used for input validation and continuous prompting.
+- Example: requesting non-empty user input until a name is entered.
+- Another example: looping a game state until the user types "Q" to quit.
+
+### Infinite Loop Warning
+- A `while` loop with a condition that never becomes `false` results in an **infinite loop**.
+- Always ensure the loop’s condition can eventually be broken.
+
+### Do-While Loop Usage
+- Ensures user input is collected and validated even if the initial input is invalid.
+- Useful when the prompt must appear at least once regardless of the condition.
+
+### Input and Control
+- `scanner.nextLine()` and `scanner.next()` are used to gather input.
+- `toUpperCase()` is used to make user input case-insensitive.
+- A `System.exit(0);` can be used to stop execution early for testing purposes.
+
+### Additional Notes
+- Always close the `Scanner` object after use to avoid resource leaks.
+- Good practice to use comments to distinguish different input loops and to document the purpose of each.
+---
+
+## 22. Number Guessing Game
+
+### Concepts Learned
+- A practical project using `Random`, `Scanner`, loops, and conditionals to build a simple interactive game.
+- The game involves guessing a randomly generated number within a specified range.
+
+### Program Structure
+- A `Random` object is used to generate a number between `min` and `max` (inclusive).
+- A `Scanner` object is used to collect user guesses.
+- A `do-while` loop allows repeated guessing until the correct number is found.
+- An `attempts` counter tracks how many tries it takes to guess the correct number.
+
+### Conditional Logic
+- If the guess is lower than the target, a "TOO LOW" message is shown.
+- If the guess is higher, a "TOO HIGH" message is shown.
+- If the guess matches, a success message and the attempt count are displayed.
+
+### Output and Input Handling
+- Uses `printf` to format initial prompt with the guessing range.
+- Ensures repeated prompting by checking the win condition at the end of each loop iteration.
+
+### Additional Notes
+- `random.nextInt(min, max + 1)` ensures the upper bound is inclusive.
+- The loop guarantees at least one guess attempt.
+- Encourages control flow understanding and reinforces user interaction design.
+- Always closes the `Scanner` at the end to prevent resource leaks.
+---
+
+## 23. For Loops
+
+### Concepts Learned
+- A `for` loop is used to execute code a specific number of times.
+- Syntax:
+  - `for(initialization; condition; update) { // code to repeat }`
+
+### Loop Control
+- `initialization`: sets the starting value (e.g., `int i = 1`)
+- `condition`: continues the loop while `true` (e.g., `i <= max`)
+- `update`: modifies the loop variable (e.g., `i++`, `i--`, `i -= 3`)
+
+### Use Cases
+- A loop that runs from 1 to a user-specified number using user input and `scanner.nextInt()`.
+- A countdown project using reverse iteration from a user-defined start value.
+
+### Countdown Exercise
+- Demonstrates reverse iteration with `for (int i = start; i > 0; i--)`.
+- Uses `Thread.sleep(1000)` to pause for one second between each number.
+- The method `main` is marked with `throws InterruptedException` to handle potential thread interruptions.
+
+### Additional Notes
+- `System.exit(0)` is used to stop the execution of any code that follows the countdown method.
+- Properly closes the `Scanner` to avoid resource leaks.
+- A `for` loop is ideal when the number of iterations is known in advance.
+---
+
+## 24. Break and Continue
+
+### Concepts Learned
+- `break` and `continue` are control flow statements used within loops.
+- They alter the normal flow of execution based on specific conditions.
+
+### `break`
+- Immediately exits the nearest enclosing loop.
+- Any code after the `break` statement within the loop is skipped.
+- Commonly used to exit a loop early when a condition is met.
+
+### `continue`
+- Skips the current iteration and proceeds to the next loop cycle.
+- Any code after the `continue` statement within the current iteration is not executed.
+
+### Example Behavior
+- In a loop from 0 to 9, using `continue` when `i == 5` will cause the value 5 to be skipped in the output.
+- Using `break` instead would cause the loop to stop entirely once `i == 5`.
+
+### Additional Notes
+- These statements are useful for fine-tuned control over loop behavior.
+- Should be used intentionally, as overuse can make loops harder to read and maintain.
+---
+
+## 25. Nested Loops
+
+### Concepts Learned
+- A nested loop is a loop placed inside another loop.
+- The outer loop typically controls rows, and the inner loop controls columns.
+- Commonly used in working with matrices, tables, grids, or any 2D structure.
+
+### Basic Structure
+- The outer loop runs once for each row.
+- The inner loop runs fully for each iteration of the outer loop.
+- Example: printing numbers in multiple rows, where the inner loop prints 1–9 on each line.
+
+### Mini Project: Matrix Printer
+- Prompts the user to enter the number of rows and columns, and a character to print.
+- Uses a nested loop to construct a rectangle using the user-defined symbol.
+- The outer loop handles line breaks (new rows), and the inner loop prints characters across a row.
+
+### Input and Logic
+- Uses `Scanner` to read `int` values for rows and columns, and a `char` for the symbol.
+- `scanner.next().charAt(0)` reads a single character from input.
+- `System.out.print(symbol)` prints characters in the same row.
+- `System.out.println()` moves to the next line after each row.
+
+### Additional Notes
+- Nested loops are essential in many algorithms and are often used in data structures and algorithm challenges.
+- Pay attention to loop boundaries (`<` vs `<=`) to control dimensions correctly.
+- `System.exit(0)` is used in this example to control which part of the program runs.
