@@ -361,3 +361,156 @@
 ### Additional Notes
 - Strings are immutable; methods like `toUpperCase()` return a new string and do not modify the original unless reassigned.
 - Java string comparisons should always use `.equals()` or `.equalsIgnoreCase()`, not `==`, which compares object references.
+---
+
+## 14. Substrings
+
+### Concepts Learned
+- The `.substring()` method is used to extract a portion of a string.
+- Syntax: `string.substring(start, end)` or `string.substring(start)`
+  - `start` is inclusive.
+  - `end` is exclusive (optional in the two-argument version).
+
+### Use Case Example
+- Extracting a username and domain from an email address:
+  - `email.substring(0, email.indexOf("@"))` extracts the part before the `@` (username).
+  - `email.substring(email.indexOf("@") + 1)` extracts the part after the `@` (domain).
+
+### Validation
+- Before using `.substring()` in this context, the code checks whether the input contains an `@` symbol using `email.contains("@")`.
+
+### Additional Notes
+- If the string does not contain the specified index or character, using `.substring()` can cause `StringIndexOutOfBoundsException`.
+- Always validate the string format before performing substring operations to avoid runtime errors.
+- Useful for parsing structured text like emails, URLs, or file paths.
+---
+
+## 15. Weight Converter
+
+### Concepts Learned
+- A simple interactive project using conditional logic and arithmetic to convert between units.
+- Demonstrates how to use user input to guide program logic through a menu system.
+
+### Program Structure
+- Displays a menu with numbered options for conversion direction:
+  - Option 1: Convert pounds (lbs) to kilograms (kgs).
+  - Option 2: Convert kilograms (kgs) to pounds (lbs).
+- Uses `if-else if-else` to execute the correct conversion based on the user’s choice.
+
+### Conversion Logic
+- Pounds to kilograms: multiply by `0.453592`.
+- Kilograms to pounds: multiply by `2.20462`.
+
+### Input and Output
+- Uses `nextInt()` to select the option.
+- Uses `nextDouble()` to collect the weight input.
+- `System.out.printf()` is used for formatted decimal output with two digits of precision.
+
+### Additional Notes
+- Includes input validation with an `else` block to handle invalid choices.
+- Illustrates how to chain together multiple user prompts and calculations within a single method.
+- Serves as a practical example of combining menu selection with unit conversion logic.
+---
+
+## 16. Ternary Operator
+
+### Concepts Learned
+- The ternary operator is a compact form of an `if-else` statement used to assign values based on a condition.
+- Syntax:
+  - `variable = (condition) ? valueIfTrue : valueIfFalse;`
+
+### Use Cases
+- Can be used for quick decisions where a simple condition determines which of two values to assign.
+- Improves readability when the logic is straightforward and fits on one line.
+
+### Examples
+- Determining pass/fail based on score:
+  - `(score >= 60) ? "PASS" : "FAIL"`
+- Checking if a number is even or odd:
+  - `(number % 2 == 0) ? "EVEN" : "ODD"`
+- Determining time of day:
+  - `(hours < 12) ? "A.M." : "P.M."`
+- Setting tax rate based on income:
+  - `(income >= 40000) ? 0.25 : 0.15`
+
+### Additional Notes
+- The ternary operator is best used when returning one of two values; for more complex logic, a full `if-else` block may be more appropriate.
+- Useful for setting flags, conditions, or small assignments in a concise way.
+- Helps simplify logic in places like initializations or return statements.
+---
+
+## 17. Temperature Converter
+
+### Concepts Learned
+- Combines user input, string handling, arithmetic, and the ternary operator to perform a practical temperature conversion.
+- Demonstrates temperature conversion formulas:
+  - Fahrenheit to Celsius: `(temp - 32) * 5 / 9`
+  - Celsius to Fahrenheit: `(temp * 9 / 5) + 32`
+
+### Program Flow
+- Takes a numeric input for temperature.
+- Asks the user whether to convert to Celsius or Fahrenheit.
+- Converts the input to uppercase using `toUpperCase()` to simplify comparison.
+
+### Ternary Logic
+- The ternary operator is used to apply the correct conversion formula:
+  - If the user enters `"C"`, it converts from Fahrenheit to Celsius.
+  - Otherwise, it assumes the input is in Celsius and converts to Fahrenheit.
+
+### Output
+- Uses `System.out.printf()` to display the result with one decimal place.
+- Appends the selected unit (`C` or `F`) to the result using string formatting.
+
+### Additional Notes
+- Input validation is not included; the program assumes `"C"` or `"F"` will be entered.
+- The use of `.toUpperCase()` ensures that input is case-insensitive.
+- Practical example of conditional logic applied to real-world unit conversion.
+---
+
+## 18. Enhanced Switches
+
+### Concepts Learned
+- Enhanced `switch` statements provide a cleaner and more concise alternative to long `if-else if` chains.
+- Introduced in Java 14, the enhanced syntax allows multiple case labels and arrow (`->`) expressions for one-line execution.
+
+### Syntax Features
+- Multiple values can be grouped using commas in a single case line.
+- Uses the `->` syntax to directly associate a case with an action.
+- `default` handles unmatched input.
+
+### Example Structure
+```java
+switch(day) {
+    case "Monday", "Tuesday" -> System.out.println("Weekday");
+    case "Saturday", "Sunday" -> System.out.println("Weekend");
+    default -> System.out.println("Invalid day");
+}
+---
+
+## 19. Calculator
+
+### Concepts Learned
+- Demonstrates a basic calculator that performs arithmetic operations based on user input.
+- Uses enhanced `switch` statements to select and execute operations.
+
+### Program Flow
+- Collects two numbers and an operator (`+`, `-`, `*`, `/`, `^`) from the user.
+- Operator is read as a `char` using `scanner.next().charAt(0)`.
+- A `switch` statement determines the operation to perform.
+
+### Supported Operations
+- `+` – addition
+- `-` – subtraction
+- `*` – multiplication
+- `/` – division (with division-by-zero check)
+- `^` – exponentiation using `Math.pow(num1, num2)`
+
+### Error Handling
+- Checks for division by zero when the operator is `/`.
+- Handles invalid operators using the `default` case in the `switch`.
+- Uses a `validOperation` flag to determine whether to print the result.
+
+### Additional Notes
+- The result is stored in a `double` to accommodate all supported operations.
+- Program logic is structured to ensure the result is only printed if the operation is valid.
+- This example combines conditionals, user input, error handling, and formatted logic using enhanced switch syntax.
