@@ -653,3 +653,103 @@ switch(day) {
 - Nested loops are essential in many algorithms and are often used in data structures and algorithm challenges.
 - Pay attention to loop boundaries (`<` vs `<=`) to control dimensions correctly.
 - `System.exit(0)` is used in this example to control which part of the program runs.
+---
+
+## 26. Methods
+
+### Concepts Learned
+- A method is a block of reusable code that performs a specific task and is executed when called.
+- Methods improve modularity, readability, and code reuse.
+
+### Method Declaration
+- Syntax: `static returnType methodName(parameters) { // code }`
+- Methods must specify:
+  - A return type (`void`, `int`, `double`, `boolean`, etc.)
+  - A name
+  - Optional parameters with defined types
+
+### Method Examples
+- `happyBirthday(String name, int age)` – prints a birthday message using parameters.
+- `square(double number)` – returns the square of a number.
+- `cube(double number)` – returns the cube of a number.
+- `getFullName(String first, String last)` – returns a concatenated full name.
+- `ageCheck(int age)` – returns `true` if age is 18 or older, otherwise `false`.
+
+### Calling Methods
+- Methods are called using their name followed by parentheses, passing required arguments.
+- Return values can be used directly or stored in variables.
+
+### Return Types
+- `void` – does not return a value.
+- Other types (`double`, `String`, `boolean`) return values which can be used or printed.
+
+### Additional Notes
+- Method names should be descriptive and follow camelCase convention.
+- Parameters allow passing data into methods; arguments must match in type and order.
+- Methods can call other methods and return values to the caller.
+---
+
+## 27. Overloaded Methods
+
+### Concepts Learned
+- Method overloading allows multiple methods to share the same name as long as their parameter lists (signatures) are different.
+- A method's **signature** includes its name and parameter types/order, not the return type.
+
+### Rules of Overloading
+- The method name must remain the same.
+- The number and/or types of parameters must be different.
+- Return type can be the same or different, but it does not determine overload validity.
+
+### Examples
+
+#### Overloaded `add` Methods:
+- `add(double a, double b)`
+- `add(double a, double b, double c)`
+- `add(double a, double b, double c, double d)`
+- Each method adds a different number of values.
+
+#### Overloaded `bakePizza` Methods:
+- `bakePizza(String bread)` – basic pizza.
+- `bakePizza(String bread, String cheese)` – adds cheese.
+- `bakePizza(String bread, String cheese, String topping)` – adds topping.
+
+### Benefits
+- Simplifies code readability when methods perform similar operations with varying inputs.
+- Allows for flexible method use depending on how much information is provided.
+
+### Additional Notes
+- Overloading does not work based solely on return type.
+- Method resolution is determined at compile time based on the method call's arguments.
+---
+
+## 29. Banking Program
+
+### Concepts Learned
+- A menu-driven console application combining control flow, methods, user input, and validation logic.
+- Demonstrates how to structure a multi-option program using a loop and `switch` statement.
+
+### Program Flow
+- Displays a menu with four options:
+  1. Show Balance
+  2. Deposit
+  3. Withdraw
+  4. Exit
+- The program runs inside a `while` loop until the user selects the exit option.
+
+### Method Overview
+- `showBalance(double balance)` – displays the current account balance using `printf` for formatting.
+- `deposit()` – collects a deposit amount, validates it, and returns the value to be added to the balance.
+- `withdraw(double balance)` – collects a withdrawal amount, checks if it’s valid and affordable, and returns the value to subtract.
+
+### Input Handling
+- A single static `Scanner` is used throughout the file to avoid repeated instantiations.
+- Inputs are validated to prevent negative deposits or withdrawals, and to ensure sufficient balance for withdrawals.
+
+### Control Structure
+- Uses an enhanced `switch` statement to execute menu actions based on user input.
+- A `boolean isRunning` flag controls the loop and is set to `false` when the user chooses to exit.
+
+### Additional Notes
+- Demonstrates good modular design with small, focused methods.
+- Makes use of reusable logic and consistent validation.
+- A practical example of user interaction and dynamic state updates within a program.
