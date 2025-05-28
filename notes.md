@@ -866,4 +866,57 @@ for (String fruit : fruits) {
 - This approach demonstrates how to dynamically allocate an array size at runtime.
 - Proper closure of the `Scanner` ensures there are no resource leaks.
 - Using a for-each loop for output is more concise when the index is not needed.
-```
+
+## 33. Search an Array
+
+### Concepts Learned
+- Arrays can be searched linearly using a `for` loop.
+- Use `.equals()` to compare strings rather than `==`, which compares object references.
+- Introduced the use of a `boolean` flag (`isFound`) to track search results during iteration.
+
+### Program Behavior
+- The program defines an array of `String` values (`fruits`).
+- It prompts the user to input a string (fruit name) to search for in the array.
+- A `for` loop iterates through each element in the `fruits` array.
+  - If a match is found using `.equals()`, the index is printed and `isFound` is set to `true`.
+  - The loop terminates early using `break` once a match is found.
+- After the loop, the program checks if `isFound` is still `false` to determine if the search was unsuccessful.
+
+### Input Handling Notes
+- `scanner.nextLine()` reads a full line from the user, useful for string input.
+- `scanner.close()` is called at the end to release resources.
+
+### Additional Notes
+- Linear search is suitable for small arrays or unsorted data.
+- `equalsIgnoreCase()` could be used instead of `equals()` for case-insensitive matching.
+- Searching through an array using `for-each` is possible, but tracking the index is easier with a regular `for` loop.
+---
+## 34. Varargs
+
+### Concepts Learned
+- **Varargs** (variable-length arguments) allow methods to accept zero or more arguments of the same type.
+- Declared using an ellipsis (`...`) after the type in the method parameter.
+- Internally, Java treats varargs as an array, enabling iteration over the passed values.
+
+### Advantages
+- Increases **flexibility** by avoiding method overloading for different numbers of arguments.
+- Simplifies method definitions when accepting an unknown number of inputs.
+
+### Program Behavior
+- Defines two methods:
+  - `add(int... numbers)` sums any number of integers.
+  - `average(double... numbers)` calculates the average of passed doubles.
+- If no arguments are passed to `average()`, it returns `0` to avoid division by zero.
+
+### Syntax
+- Only one varargs parameter is allowed per method.
+- The varargs parameter must be the **last** in the parameter list:
+  ```java
+  static void example(String label, int... values)
+  ```
+
+### Additional Notes
+- Varargs can be passed directly as comma-separated arguments.
+- Java implicitly wraps the inputs in an array, so methods behave as if receiving a standard array.
+- Useful for utility methods where the number of arguments isn't fixed.
+
