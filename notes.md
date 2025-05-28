@@ -920,3 +920,113 @@ for (String fruit : fruits) {
 - Java implicitly wraps the inputs in an array, so methods behave as if receiving a standard array.
 - Useful for utility methods where the number of arguments isn't fixed.
 
+## 35. 2D Arrays
+
+### Concepts Learned
+- A **2D array** is an array of arrays, often used to represent matrices, grids, or tables.
+- Access elements using two indices: `array[row][column]`.
+- Data is typically stored in rows and columns.
+
+### Declaration & Initialization
+- 2D arrays can be declared directly:
+  ```java
+  String[][] groceries = {
+      {"apple", "orange", "banana"},
+      {"potato", "onion", "carrot"},
+      {"chicken", "pork", "beef", "fish"}
+  };
+  ```
+- Or built from previously declared arrays:
+  ```java
+  String[] vegetables = {"potato", "onion", "carrot"};
+  String[][] groceries = {
+      {"apple", "orange", "banana"},
+      vegetables,
+      {"chicken", "pork", "beef", "fish"}
+  };
+  ```
+
+### Modifying Elements
+- Access and modify a specific element using:
+  ```java
+  groceries[1][2] = "celery";
+  ```
+
+### Looping Through a 2D Array
+- Use **nested enhanced for-loops** to iterate through each element:
+  ```java
+  for (String[] foods : groceries) {
+      for (String food : foods) {
+          System.out.print(food + " ");
+      }
+      System.out.println();
+  }
+  ```
+
+### `numpad()` Example
+- Demonstrates a numeric keypad layout using a 2D `char` array:
+  - Rows are printed using nested loops.
+  - Useful for visual layouts and UI simulations.
+
+### Additional Notes
+- 2D arrays in Java can have rows of varying lengths (jagged arrays).
+- Always ensure proper bounds checking when accessing elements.
+- Suitable for tasks involving tables, board games, matrices, or grid-based UI elements.
+---
+
+## 36. Quiz Game
+
+### Concepts Learned
+- Arrays and 2D arrays are used to structure questions and multiple-choice options.
+- A loop is used to iterate through each question, presenting options and collecting user input.
+- Conditional logic (`if/else`) determines whether the user's answer is correct and tracks the score.
+
+### Program Behavior
+- Displays a welcome message and sequentially presents 5 quiz questions.
+- Each question includes 4 answer options stored in a 2D array.
+- The user inputs a numeric guess (1–4), which is compared to the answer key stored in an `int[]` array.
+- Correct answers increment the score; incorrect answers show a message but do not penalize further.
+- Final score is displayed after all questions are answered.
+
+### Array Structure
+- `String[] questions`: Holds quiz questions.
+- `String[][] options`: Each sub-array holds 4 answer options.
+- `int[] answers`: Stores the correct option index (1-based) for each question.
+
+### Input Handling
+- Uses `Scanner` to read the user's answer for each question.
+- Compares the input to the corresponding index in the `answers` array.
+
+### Additional Notes
+- Enhancements could include input validation, random question order, or support for different quiz sizes.
+- A single loop efficiently handles question display, input, answer checking, and scoring.
+
+---  
+## 37. Rock Paper Scissors
+
+### Concepts Learned
+- Demonstrates user input handling with `Scanner`.
+- Uses `Random` to simulate computer choice from an array of options.
+- `do-while` loop enables repeated gameplay based on user input.
+- Conditional logic (`if`, `else if`, `else`) is used to determine game outcomes.
+
+### Game Flow
+- User is prompted to input `"rock"`, `"paper"`, or `"scissors"`.
+- Computer randomly selects one of the three options.
+- Input is validated to ensure only valid moves are accepted.
+- Game result is evaluated:
+  - Draw: both choices are the same.
+  - Win/Lose: based on classic Rock-Paper-Scissors rules.
+- After each round, the user is asked if they want to play again.
+
+### Input & Validation
+- User input is converted to lowercase for consistent comparison.
+- Invalid inputs trigger a warning and skip to the next loop iteration using `continue`.
+
+### Looping
+- A `do-while` loop allows the game to repeat until the user types `"no"` when prompted.
+
+### Additional Notes
+- Enhancements could include score tracking, input normalization, or limiting the number of rounds.
+- Case sensitivity is handled by converting all input to lowercase.
+- Array `choices[]` encapsulates possible computer moves for cleaner random selection.
