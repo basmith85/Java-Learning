@@ -753,3 +753,117 @@ switch(day) {
 - Demonstrates good modular design with small, focused methods.
 - Makes use of reusable logic and consistent validation.
 - A practical example of user interaction and dynamic state updates within a program.
+---
+
+## 30. Dice Roller Program
+
+### Concepts Learned
+- Simulation of a dice roll using `Random` and `Scanner`.
+- Use of `switch` and multi-line strings to display ASCII art for each die face.
+- Demonstrates loop logic for handling user-defined repetition and accumulative operations.
+
+### Program Behavior
+- Prompts the user to enter the number of dice to roll.
+- Rolls each die individually using `random.nextInt(1, 7)`.
+- Each roll is:
+  - Printed visually using a helper method `printDie(int roll)`.
+  - Displayed numerically.
+  - Added to the total roll score.
+
+### `printDie()` Method
+- Uses Java's text blocks (`""" """`) to define ASCII art representations for each die value (1 to 6).
+- A `switch` statement prints the correct die face based on the roll.
+
+### Input Validation
+- Ensures that the number of dice entered is greater than 0.
+- Displays an error message if the input is invalid.
+
+### Additional Notes
+- This is a complete mini-project showcasing:
+  - Use of methods to organize logic (`printDie`).
+  - Basic input validation.
+  - Looping constructs (`for` loop).
+  - Random number generation.
+  - Output formatting using multiline strings.
+---
+
+## 31. Arrays
+
+### Concepts Learned
+- An **array** is a container that holds multiple values of the same data type.
+- Arrays are declared using square brackets `[]` after the data type.
+- Arrays have a fixed size and are zero-indexed (first element is at index 0).
+
+```java
+String[] fruits = {"apple", "orange", "banana", "coconut"};
+```
+
+### Common Operations
+- Access an element:
+```java
+System.out.println(fruits[0]);
+```
+
+- Modify an element:
+```java
+fruits[0] = "pineapple";
+```
+
+- Get array length:
+```java
+int length = fruits.length;
+```
+
+### Useful Methods from Arrays Class
+- Sort array alphabetically:
+```java
+Arrays.sort(fruits);
+```
+
+- Fill entire array with a single value:
+```java
+Arrays.fill(fruits, "pineapple");
+```
+
+### Looping Through Arrays
+- Standard for loop:
+```java
+for (int i = 0; i < fruits.length; i++) {
+    System.out.println(fruits[i]);
+}
+```
+
+- Enhanced for-each loop:
+```java
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+```
+
+### Additional Notes
+- Use arrays when the number of elements is fixed.
+- For dynamic collections, use `ArrayList`.
+## 32. Array User Input
+
+### Concepts Learned
+- Arrays can be initialized at runtime based on user input for flexible sizing.
+- User input can be collected and stored sequentially into an array using a loop.
+- `Scanner.nextLine()` is used to capture full string input, including spaces.
+- A `for` loop allows indexed assignment into the array, followed by iteration using a for-each loop to display values.
+
+### Program Behavior
+- The program first asks how many food items the user wants to input.
+- It then initializes a `String[]` array with the specified size.
+- A `for` loop runs from `0` to `size - 1`, prompting the user each time to enter a food name.
+- Each food entered is stored in the corresponding array index.
+- After the array is filled, a for-each loop prints each food item on a new line.
+
+### Input Handling Notes
+- `scanner.nextInt()` reads the integer input for array size.
+- `scanner.nextLine()` is called after `nextInt()` to consume the leftover newline character from the buffer. Without this, the first call to `nextLine()` inside the loop would be skipped.
+
+### Additional Notes
+- This approach demonstrates how to dynamically allocate an array size at runtime.
+- Proper closure of the `Scanner` ensures there are no resource leaks.
+- Using a for-each loop for output is more concise when the index is not needed.
+```
