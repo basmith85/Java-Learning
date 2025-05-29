@@ -1030,3 +1030,41 @@ for (String fruit : fruits) {
 - Enhancements could include score tracking, input normalization, or limiting the number of rounds.
 - Case sensitivity is handled by converting all input to lowercase.
 - Array `choices[]` encapsulates possible computer moves for cleaner random selection.
+---
+## 38. Slot Machine
+
+### Concepts Learned
+- Simulates a slot machine game with betting, randomized symbols, and payout calculation.
+- Reinforces use of arrays, loops, user input, conditionals, and custom methods.
+- Demonstrates clean separation of logic using helper methods (`spinRow()`, `printRow()`, `getPayout()`).
+
+### Program Behavior
+- Starts with a fixed balance of `$100`.
+- Prompts user to place a bet before each spin.
+- Deducts the bet from balance and spins 3 random symbols.
+- Calculates payout based on matched symbols and displays result.
+- Repeats until user quits or balance reaches 0.
+
+### Gameplay Flow
+- User enters a valid bet (must be > 0 and ≤ balance).
+- `spinRow()` randomly selects 3 symbols from the list:
+  - 🍒, 🍉, 🍋, 🔔, ⭐
+- `printRow()` displays the result in a clean slot-style format.
+- `getPayout()` calculates the winnings based on symbol match logic:
+  - 3 matches → higher payout multiplier.
+  - 2 adjacent matches → lower payout multiplier.
+
+### Input Validation
+- Prevents bets over the current balance.
+- Prevents non-positive bets.
+- Prompts user to play again after each round.
+
+### Payout Rules (Examples)
+- 🍒 x3 → 3× bet, 🔔 x3 → 10× bet, ⭐ x3 → 20× bet
+- 🍋 x2 (adjacent) → 4× bet, ⭐ x2 (adjacent) → 10× bet
+
+### Additional Notes
+- Uses `String.join(" | ", row)` to neatly format the slot output.
+- Demonstrates use of enhanced `switch` expressions for payout logic.
+- Incorporates basic emoji support for a more engaging UI.
+- Game ends when balance reaches 0 or the player chooses not to continue.
