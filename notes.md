@@ -1068,3 +1068,88 @@ for (String fruit : fruits) {
 - Demonstrates use of enhanced `switch` expressions for payout logic.
 - Incorporates basic emoji support for a more engaging UI.
 - Game ends when balance reaches 0 or the player chooses not to continue.
+---
+## 39. Object-Oriented Programming (OOP)
+
+### Concepts Learned
+- **Objects** represent real-world entities that combine data (attributes) and behavior (methods).
+- A **class** is a blueprint for creating objects. It defines the structure and behavior but does not occupy memory until instantiated.
+- Objects are **reference types** in Java and are created using the `new` keyword.
+
+### Class Structure
+- The `Car` class contains:
+  - **Attributes**: `make`, `model`, `year`, `price`, and `isRunning`
+  - **Methods**: `start()`, `stop()`, `drive()`, and `brake()`
+
+### Creating and Using Objects
+- `Car car1 = new Car();` creates a new object of the `Car` class.
+- Each object has its own copy of the attributes.
+- Methods can be called on objects using dot notation, e.g., `car1.drive();`
+
+### Method Behavior
+- `start()` sets `isRunning` to true and prints a message.
+- `stop()` sets `isRunning` to false and prints a message.
+- `drive()` and `brake()` use the object's `model` value to personalize output.
+
+### Additional Notes
+- Multiple objects can be created from the same class, each with its own state.
+- It's fine to define multiple classes in a single file for small or educational projects, but only one class should be `public`, and it must match the filename.
+- This example illustrates basic principles of encapsulation and object instantiation in Java.
+---
+## 40. Constructors
+
+### Concepts Learned
+- A constructor is a special method used to initialize objects.
+- It has the same name as the class and does not have a return type.
+- Constructors can take parameters to set initial values for the object's fields.
+
+### Class Structure: Student
+- Attributes:
+  - `name` - the student's name
+  - `age` - the student's age
+  - `gpa` - the student's grade point average
+  - `isEnrolled` - initialized as `true` inside the constructor
+
+### Constructor Example
+- The constructor for `Student` takes three parameters: `name`, `age`, and `gpa`.
+- The `this` keyword is used to distinguish between constructor parameters and instance fields.
+
+Example:
+- `Student student1 = new Student("Spongebob", 30, 3.2);`
+- Creates a new `Student` object with initialized values.
+
+### Method Behavior
+- `study()` is an instance method that prints a message using the `name` field.
+- Each object created can call its own `study()` method using its data.
+
+### Additional Notes
+- If no constructor is explicitly defined, Java provides a default no-argument constructor.
+- Constructors allow clean setup of object state at creation time.
+- Use `this.field = parameter` when variable names are the same.
+---
+## 41. Overloaded Constructors
+
+### Concepts Learned
+- **Overloaded constructors** allow a class to have multiple constructor methods with different parameter lists.
+- This enables flexible object creation by allowing different sets of data to be passed in at initialization time.
+- Constructors must match the class name exactly and do not have a return type.
+
+### Behavior and Usage
+- The `User` class demonstrates constructor overloading with:
+  - A no-argument constructor (default values for all fields).
+  - A single-argument constructor (only `username` provided).
+  - A two-argument constructor (`username` and `email`).
+  - A full three-argument constructor (`username`, `email`, `age`).
+
+- Calling the appropriate constructor depends on how many values you want to initialize.
+
+### Initialization Patterns
+- `new User()` → Creates a default user with preset values.
+- `new User("Spongebob")` → Sets only the `username`; others get default values.
+- `new User("Patrick", "PStar@aol.com")` → Sets `username` and `email`; `age` defaults.
+- `new User("Sandy", "SCheeks@gmail.com", 26)` → Fully customized object with all fields set.
+
+### Additional Notes
+- Using overloaded constructors reduces the need for method overloading and avoids unnecessary parameter passing.
+- This approach simplifies object creation logic and enhances code readability and usability.
+---
